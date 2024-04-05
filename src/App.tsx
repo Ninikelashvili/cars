@@ -1,8 +1,19 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Garage from './pages/Garage';
+import Winners from './pages/Winners';
+import Header from './components/Header';
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Router>
+      <div className='container min-h-screen h-full'>
+          <Header />
+          <Routes>
+            <Route path='/'  element={<Garage />}/>
+            <Route path='/winners'  element={<Winners />}/>
+          </Routes>
+        </div>
+    </Router>
   );
 }
 
